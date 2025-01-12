@@ -1,0 +1,8 @@
+pandas 
+numpy 
+seaborn
+matplotlib
+spacy
+pdfplumber
+pyresparser
+rake_nltk
