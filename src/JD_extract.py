@@ -2,9 +2,14 @@
 # from pdf_reader import pdf_text
 import pdfplumber
 from pyresparser import ResumeParser
-from rake_nltk import Rake
 import os
 import pandas as pd
+# import nltk
+# nltk.download()
+import spacy
+custom_nlp = spacy.load("en_core_web_sm")
+
+
 
 
 # Function to extract text from PDF
@@ -16,13 +21,13 @@ def extract_pdf_text(file_path):
     return text
 
 # # File path to job description PDF
-pdf_file = "C://Users//DanukaDilshanRathnay//Desktop//Head - Data Analyst.pdf" # Update with your PDF path
+pdf_file = "jd's//Head of Data Analyst.pdf" # Update with your PDF path
 pdf_text = extract_pdf_text(pdf_file)
-# if not pdf_text.strip():
-#     print("Error: No text extracted from PDF.")
-# else:
-#     print("Extracted PDF Text Preview (First 500 chars):")
-#     print(pdf_text[:500])
+if not pdf_text.strip():
+    print("Error: No text extracted from PDF.")
+else:
+    print("Extracted PDF Text Preview (First 500 chars):")
+    print(pdf_text[:500])
 
 # Intelligent skill extraction with pyresparser
 def extract_skills_with_pyresparser(file_path):
